@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block title %}Learn ASL{% endblock %}
+ 
+{% block content %}
+<section id="hero" class="d-flex">   
+    <!-- align-items-center -->
+    <div class="container">
+      <div class = 'row'>
+        <div class = "col-md-8">
+          <div class = "col-md-9">
+            <div class="row">
+              <h1>Practice Your Sign Language</h1>
+              <h3>Look at the chart and practice the alphabets and take a photo to check if you are correct.</h3>
+            </div>
+            <div class="row">
+              <img src="../static/asl-alphabet_wallpaper_1920x1200.png" height="240" width="384"/>
+            </div>
+        </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="row py-4">
+                <div class="col-lg-6 mx-auto">
+        
+                    <!-- Upload image input-->
+                    <form method="POST">
+                        <label for="upload" id="upload-label">Choose file</label>
+                        <input id="upload" name="path" type="text">
+                        <button id="camera" type="submit">Upload image</button>
+                    </form>
+
+                    {% if uploaded == true %}
+                        <img src="{{image_path}}" alt="Uploaded_picture">
+                        <h2>Your Alphabet is {{letter}}</h2>
+                    {% endif %}
+                    <!-- <p><img id="output" width="200"/></p> -->
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+{% endblock %}
+
+
